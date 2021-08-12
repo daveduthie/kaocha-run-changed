@@ -1,0 +1,13 @@
+#kaocha/v1
+{:plugins #profile {:ci      [:kaocha.plugin/profiling :kaocha.plugin/orchestra]
+                    :default [:kaocha.plugin/orchestra
+                              :io.github.daveduthie/kaocha-run-changed]}
+
+ :io.github.daveduthie.kaocha-run-changed/dirs ["src" "test"]
+
+ :tests
+ [{:id                  :unit
+   :kaocha/source-paths ["src"]
+   :kaocha/test-paths   ["test"]}]
+
+ :kaocha.plugin.capture-output/capture-output? false}

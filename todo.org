@@ -1,0 +1,3 @@
+#+TITLE: Todo
+
+* TODO Derive dirs to watch from tests.edn

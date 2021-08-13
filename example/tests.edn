@@ -1,0 +1,4 @@
+#kaocha/v1
+{:plugins [:io.github.daveduthie/kaocha-run-changed]
+
+ :kaocha.plugin.capture-output/capture-output? false}

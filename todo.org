@@ -1,3 +1,3 @@
 #+TITLE: Todo
 
-* TODO Derive dirs to watch from tests.edn
+* DONE Derive dirs to watch from tests.edn

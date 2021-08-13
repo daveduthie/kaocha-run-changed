@@ -4,10 +4,10 @@
 
 (defn git-describe-tag
   []
-  (-> {:command-args ["git" "describe" "--tags"], :out :capture}
-      b/process
-      :out
-      str/trim))
+  (-> (b/process
+       {:command-args ["git" "describe" "--tags" "--always" "--dirty=-dirty"],
+        :out :capture})
+      :out str/trim))
 
 (def lib 'io.github.daveduthie/kaocha-run-changed)
 (def version (git-describe-tag))
@@ -38,6 +38,8 @@
                 :class-dir class-dir
                 :lib       lib
                 :version   version})
+  (b/copy-file {:src    (format "%s/META-INF/maven/%s/pom.xml" class-dir lib)
+                :target "pom.xml"})
   params)
 
 (defn install [params]

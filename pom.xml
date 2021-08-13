@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.daveduthie</groupId>
-  <artifactId>io.github.daveduthie.kaocha-run-changed</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
-  <name>io.github.daveduthie.kaocha-run-changed</name>
-  <description>FIXME: my new library.</description>
+  <artifactId>kaocha-run-changed</artifactId>
+  <version>3fe44f0-dirty</version>
+  <name>kaocha-run-changed</name>
+  <description>Kaocha plugin to run tests changed since last run</description>
   <url>https://github.com/daveduthie/io.github.daveduthie.kaocha-run-changed</url>
   <licenses>
     <license>
@@ -21,14 +21,17 @@
   <scm>
     <url>https://github.com/daveduthie/io.github.daveduthie.kaocha-run-changed</url>
     <connection>scm:git:git://github.com/daveduthie/io.github.daveduthie.kaocha-run-changed.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/daveduthie/io.github.daveduthie.kaocha-run-changed.git</developerConnection>
-    <tag>v0.1.0-SNAPSHOT</tag>
   </scm>
   <dependencies>
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>clojure</artifactId>
       <version>1.10.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.clojure</groupId>
+      <artifactId>tools.namespace</artifactId>
+      <version>1.1.0</version>
     </dependency>
   </dependencies>
   <build>
@@ -38,10 +41,6 @@
     <repository>
       <id>clojars</id>
       <url>https://repo.clojars.org/</url>
-    </repository>
-    <repository>
-      <id>sonatype</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
     </repository>
   </repositories>
   <distributionManagement>

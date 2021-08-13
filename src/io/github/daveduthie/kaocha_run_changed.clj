@@ -7,7 +7,6 @@
    [kaocha.testable :as testable]))
 
 (def ^:private *tracker (atom (ctn.track/tracker)))
-(def ^:private *first-run? (atom true))
 
 (defn- changed-namespaces! [dirs]
   (let [updated (ctn.dir/scan-dirs @*tracker dirs)]
@@ -20,7 +19,7 @@
                   (update testable
                           :kaocha.test-plan/tests
                           (partial map #(filter-testable changed-namespaces %))))]
-    (cond (hierarchy/group? testable)
+    (cond (hierarchy/group? testable) ; a set of tests in one ns
           (if (contains? changed-namespaces (:kaocha.ns/name testable))
             testable
             (assoc testable ::testable/skip true))
@@ -29,12 +28,8 @@
 
 (defn filter-test-plan
   [{::keys [dirs], :as test-plan}]
-  (if @*first-run?
-    (do (reset! *first-run? false)
-        test-plan)
-    (let [changed (set (changed-namespaces! dirs))
-          updated (filter-testable changed test-plan)]
-      updated)))
+  (let [changed (set (changed-namespaces! dirs))]
+    (filter-testable changed test-plan)))
 
 ;; -----------------------------------------------------------------------------
 ;; The plugin

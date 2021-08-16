@@ -9,5 +9,6 @@
   :test {:extra-paths ["test"]
          :extra-deps  {lambdaisland/kaocha {:mvn/version "1.0.861"}}}
 
-  :build {:deps       {io.github.clojure/tools.build {:tag "v0.1.7" :sha "fc2e1f8"}}
-          :ns-default build}}}
+  :build {:extra-paths ["dev"]
+          :deps        {io.github.clojure/tools.build {:tag "v0.1.7" :sha "fc2e1f8"}}
+          :ns-default  build}}}

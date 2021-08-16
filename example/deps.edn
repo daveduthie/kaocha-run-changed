@@ -1,8 +1,9 @@
 {:paths   ["src" "resources"]
- :deps    {ch.qos.logback/logback-classic          {:mvn/version "1.2.3" }
-           io.github.daveduthie/kaocha-run-changed {:local/root ".."}
-           org.clojure/tools.logging               {:mvn/version "1.1.0"}
+ :deps    {ch.qos.logback/logback-classic {:mvn/version "1.2.3" }
+           org.clojure/tools.logging      {:mvn/version "1.1.0"}
            }
  :aliases {:test {:extra-paths ["test"]
-                  :extra-deps  {lambdaisland/kaocha {:mvn/version "1.0.861"}}
-                  :main-opts   ["-m" "kaocha.runner"]}}}
+                  :extra-deps  {lambdaisland/kaocha {:mvn/version "1.0.861"}
+                                io.github.daveduthie/kaocha-run-changed {:local/root ".."}
+                                }
+                  :main-opts ["-m" "kaocha.runner"]}}}

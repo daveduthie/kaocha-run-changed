@@ -1,0 +1,28 @@
+#+TITLE: kaocha-run-changed
+
+* What is this?
+
+This plugin for the [[https://github.com/lambdaisland/kaocha][Kaocha]] test runner filters tests to only those depend on
+files changed since the last test run.
+
+* Example use
+
+Add the lib:
+
+#+begin_src clojure
+{:aliases
+ {:test
+  {:extra-deps
+   {lambdaisland/kaocha                     {:mvn/version "..."}
+    io.github.daveduthie/kaocha-run-changed {:git/url "https://github.com/daveduthie/kaocha-run-changed"
+                                             :git/sha "..."}}
+   :extra-paths ["test"]
+   :main-opts   ["-m" "kaocha.runner"]}}}
+#+end_src
+
+Reference it in your =tests.edn=:
+
+#+begin_src clojure
+#kaocha/v1
+{:plugins [:io.github.daveduthie/kaocha-run-changed]}
+#+end_src

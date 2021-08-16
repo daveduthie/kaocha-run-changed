@@ -12,7 +12,6 @@
    [kaocha.hierarchy :as hierarchy]
    [kaocha.plugin :as plugin :refer [defplugin]]
    [kaocha.testable :as testable]
-   [kaocha.result :as result]
    [kaocha.watch :as watch]))
 
 (def ^:private *tracker (atom (ctn.track/tracker)))

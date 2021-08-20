@@ -71,7 +71,7 @@
                      toRun#))
            (println "Provide :to arg with one of" '~tasks))))))
 
-(deflinked make [clean write-pom jar install])
+(deflinked make [clean write-pom sync-pom jar install])
 
 (comment
   (make {:to 'write-pom}))

@@ -26,6 +26,12 @@
                 :class-dir class-dir
                 :lib       lib
                 :version   version})
+  params)
+
+(defn sync-pom
+  "Run ocassionally update pom.xml at root"
+  [params]
+  (write-pom params)
   (b/copy-file {:src    (format "%s/META-INF/maven/%s/pom.xml" class-dir lib)
                 :target "pom.xml"})
   params)

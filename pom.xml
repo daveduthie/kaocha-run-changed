@@ -3,10 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.daveduthie</groupId>
   <artifactId>kaocha-run-changed</artifactId>
-  <version>0.0.3</version>
+  <version>0.0.5</version>
   <name>kaocha-run-changed</name>
   <description>Kaocha plugin to run tests changed since last run</description>
-  <url>https://github.com/daveduthie/io.github.daveduthie/kaocha-run-changed</url>
+  <url>https://github.com/daveduthie/kaocha-run-changed</url>
   <licenses>
     <license>
       <name>MIT License</name>
@@ -19,8 +19,8 @@
     </developer>
   </developers>
   <scm>
-    <url>https://github.com/daveduthie/io.github.daveduthie/kaocha-run-changed</url>
-    <connection>scm:git:git://github.com/daveduthie/io.github.daveduthie/kaocha-run-changed.git</connection>
+    <url>https://github.com/daveduthie/kaocha-run-changed</url>
+    <connection>scm:git:git://github.com/daveduthie/kaocha-run-changed.git</connection>
   </scm>
   <dependencies>
     <dependency>

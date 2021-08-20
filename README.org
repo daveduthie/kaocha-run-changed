@@ -2,8 +2,8 @@
 
 * What is this?
 
-This plugin for the [[https://github.com/lambdaisland/kaocha][Kaocha]] test runner filters tests to only those depend on
-files changed since the last test run.
+This plugin for the [[https://github.com/lambdaisland/kaocha][Kaocha]] test runner filters tests to only those which depend
+on files changed since the last test run.
 
 * Example use
 

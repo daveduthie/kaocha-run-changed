@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.daveduthie</groupId>
   <artifactId>kaocha-run-changed</artifactId>
-  <version>0.0.5</version>
+  <version>0.0.6</version>
   <name>kaocha-run-changed</name>
   <description>Kaocha plugin to run tests changed since last run</description>
   <url>https://github.com/daveduthie/kaocha-run-changed</url>

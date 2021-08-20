@@ -21,6 +21,15 @@
   (b/delete {:path "target"})
   params)
 
+(defn write-pom [params]
+  (b/write-pom {:basis     basis
+                :class-dir class-dir
+                :lib       lib
+                :version   version})
+  (b/copy-file {:src    (format "%s/META-INF/maven/%s/pom.xml" class-dir lib)
+                :target "pom.xml"})
+  params)
+
 (defn jar [params]
   (b/write-pom {:class-dir class-dir
                 :lib       lib
@@ -33,15 +42,6 @@
           :jar-file  jar-file})
   params)
 
-(defn write-pom [params]
-  (b/write-pom {:basis     basis
-                :class-dir class-dir
-                :lib       lib
-                :version   version})
-  (b/copy-file {:src    (format "%s/META-INF/maven/%s/pom.xml" class-dir lib)
-                :target "pom.xml"})
-  params)
-
 (defn install [params]
   (b/install {:basis     basis
               :lib       lib
@@ -50,8 +50,22 @@
               :class-dir class-dir})
   params)
 
+(defmacro deflinked
+  [name_ tasks]
+  (let [nsName (str *ns*)]
+    `(def ~name_
+       (fn [params#]
+         (if (:to params#)
+           (let [tsks#  '~tasks
+                 toRun# (take (inc (.indexOf tsks# (:to params#))) tsks#)]
+             (reduce (fn [parms# sym#]
+                       (prn sym#)
+                       ((resolve (symbol ~nsName (str sym#))) parms#))
+                     (dissoc params# :to)
+                     toRun#))
+           (println "Provide :to arg with one of" '~tasks))))))
+
+(deflinked make [clean write-pom jar install])
+
 (comment
-  (-> (clean {})
-      jar
-      write-pom
-      install))
+  (make {:to 'write-pom}))

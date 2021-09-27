@@ -15,3 +15,7 @@
 .hg/
 .cpcache/
 /.envrc
+.clj-kondo/.cache
+.lsp/.cache
+example/.nrepl-port
+example/.calva

@@ -1,0 +1,16 @@
+image:
+  file: .gitpod.dockerfile
+
+vscode:
+  extensions:
+    - betterthantomorrow.calva
+
+tasks:
+  - name: Start REPL
+    command: clojure -A:test
+  - name: See Changes
+    command: code CHANGELOG.md
+
+github:
+  prebuilds:
+    main: true

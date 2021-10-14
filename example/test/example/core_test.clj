@@ -7,4 +7,4 @@
   (is (= 2 (sut/f 1))))
 
 (deftest two
-  (is (= 3 (sut/f (anc/h 2)))))
+  (is (= 6 (sut/f (anc/h 2)))))

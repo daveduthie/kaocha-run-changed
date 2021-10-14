@@ -7,6 +7,7 @@ vscode:
 
 tasks:
   - name: Start REPL
+    init: clojure -A:dev:build -P && (cd example && clj -A:test -P)
     command: clojure -A:test
   - name: See Changes
     command: code CHANGELOG.md

@@ -3,4 +3,4 @@
 
 (defn f [i]
   (log/info :i i)
-  (* i 2))
+  (* i 24))

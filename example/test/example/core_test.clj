@@ -4,7 +4,7 @@
             [clojure.test :as t :refer [deftest is]]))
 
 (deftest one
-  (is (= 2 (sut/f 1))))
+  (is (= 24 (sut/f 1))))
 
 (deftest two
-  (is (= 6 (sut/f (anc/h 2)))))
+  (is (= 72 (sut/f (anc/h 2)))))
